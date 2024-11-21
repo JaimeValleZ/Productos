@@ -1,0 +1,26 @@
+<app-menu></app-menu>
+<div>
+
+    <div class="container" *ngIf="producto">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Detalle producto</h2>
+            </div>
+            <div class="card-body">
+                <ul class="card-list">
+                    <li class="list-group-item">Codigo: {{producto.codigoProducto}}</li>
+                    <li class="list-group-item">Nombre de producto: {{producto.nombreProducto}}</li>
+                    <li class="list-group-item">Descripcion: {{producto.descripcionProducto}}</li>
+                    <li class="list-group-item">Precio: {{producto.precio}}</li>
+                    <li class="list-group-item">Stock: {{producto.stock}}</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary w-100" routerLink="/">Volver</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+

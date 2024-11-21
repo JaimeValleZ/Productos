@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<div class="container">
+    <form (ngSubmit)="onUpdate()" #f="ngForm">
+        <h2 class="form-title">Modificar Producto</h2>
+        <div class="form-grid">
+            <div class="form-column" >
+                <div class="form-group">
+                    <label for="codigo">Codigo:</label>
+                    <input type="text" id="codigo" name="codigo" [(ngModel)]="producto.codigoProducto" required readonly>
+                </div>
+                <div class="form-group">
+                    <label for="nombre_Producto">Nombre del producto:</label>
+                    <input type="text" id="nombre_Producto" name="nombre_Producto" [(ngModel)]="producto.nombreProducto" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionProducto">Descripcion:</label>
+                    <input type="text" id="descripcionProducto" name="descripcionProducto" [(ngModel)]="producto.descripcionProducto" >
+                </div>
+            </div>
+            <div class="form-column">
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" [(ngModel)]="producto.precio" required>
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" name="stock" [(ngModel)]="producto.stock" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-secondary" routerLink="/">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Volver
+            </button>
+            <button type="submit" class="btn btn-warning" [disabled]="!f.valid">
+                <i class="fa fa-edit" aria-hidden="true"></i> Modificar
+            </button>
+        </div>
+    </form>
+</div>
